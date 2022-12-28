@@ -48,9 +48,12 @@ public class Deck
         List<Card> shuffledCards = new ArrayList<Card>();
         for(int i=0; i<getDeckSize();i++) {
             int index = (int) (Math.random() * getDeckSize());
-            shuffledCards.add(cards.remove(index));
+            shuffledCards.add(cards.get(index));
         }
         cards = shuffledCards;
+        
+        
+        //System.out.println(cards.get(0).getFace());
     }
     
     /**
@@ -76,7 +79,9 @@ public class Deck
      */
     public Card dealCardFromDeck() {
         // To be written 
-        return null;
+        Card topCard = cards.get(0);
+        cards.remove(0);
+        return topCard;
     }
     
     /**
@@ -85,6 +90,7 @@ public class Deck
      */
     public void addCardToDeck(Card cardToAdd) {
         // To be written
+        cards.add(cardToAdd);
     }
     
 }
