@@ -15,18 +15,24 @@ public class War
     public War()
     {
         // Initializations here...
+        Deck Filbur = new Deck();
+        Filbur.initializeNewDeck();
+        Filbur.shuffle();
+        System.out.println(Filbur.getDeckSize());
         
+        Deck[] Player = Filbur.dealDeck();
         
         // ...then run the event loop
-        this.runEventLoop();
+        this.runEventLoop(Player);
     }
     
     /**
      * This is the game's event loop. The code in here should come
      * from the War flowchart you created for this game
      */
-    public void runEventLoop() {
-
+    public void runEventLoop(Deck[] Player) {
+       System.out.println(Player[0].getDeckSize()); 
+       System.out.println(Player[1].getDeckSize());
     }
     
     /**
