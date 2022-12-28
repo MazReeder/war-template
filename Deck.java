@@ -45,6 +45,12 @@ public class Deck
      */
     public void shuffle() {
         // To be written
+        List<Card> shuffledCards = new ArrayList<Card>();
+        for(int i=0; i<getDeckSize();i++) {
+            int index = (int) (Math.random() * getDeckSize());
+            shuffledCards.add(cards.remove(index));
+        }
+        cards = shuffledCards;
     }
     
     /**
