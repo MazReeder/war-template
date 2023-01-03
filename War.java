@@ -43,7 +43,15 @@ public class War
        List<Card> warCards = new ArrayList<Card>();
        int iterations = 0;
        
-       while(Player[0].getDeckSize() > 0 || Player[1].getDeckSize() > 0) {
+       while(Player[0].getDeckSize() != 0 || Player[1].getDeckSize() != 0) {
+           if(Player[0].getDeckSize() == 0) {
+           System.out.println("Player 2 wins");
+           break;
+       }
+       else if(Player[1].getDeckSize() == 0) {
+           System.out.println("Player 1 wins");
+           break;
+       }
            System.out.println("");
            System.out.println("Turn " + (iterations + 1));
            
